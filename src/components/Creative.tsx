@@ -4,7 +4,7 @@ import Image from 'next/image';
 const Creative: React.FC = () => {
   return (
     <section 
-      className="relative py-20 md:py-40 px-6 overflow-hidden min-h-150 pb-48"
+      className="relative py-20 md:py-40 px-6 overflow-hidden min-h-150 pb-48 md:pb-96"
       style={{
         background: 'linear-gradient(120deg, #6DF2B4 0%, #4AD600 50%, #07734B 100%)'
       }}
@@ -48,7 +48,7 @@ const Creative: React.FC = () => {
       </div>
 
       {/* Centered Content */}
-      <div className="max-w-4xl mx-auto text-center relative z-10">
+      <div className="max-w-4xl mx-auto text-center relative z-10 md:mt-[-60px]">
         <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
           Creative
         </h2>
@@ -84,7 +84,7 @@ const Creative: React.FC = () => {
         }
 
         .animate-float-clouds {
-          animation: float-clouds 30s linear infinite;
+          animation: float-clouds 60s linear infinite;
         }
       `}</style>
     </section>
