@@ -10,7 +10,7 @@ export default function About() {
         /* Mobile: Static border */
         @media (max-width: 767px) {
           .pulsate {
-            border: 10px solid var(--watercourse-green);
+            border: 5px solid #2c2c2c;
             transform: none;
           }
         }
@@ -39,12 +39,6 @@ export default function About() {
           {/* Image - First on Mobile, Second on Desktop */}
           <div className="flex justify-center order-1 md:order-2">
             <div
-              className="pulsate"
-              style={{
-                width: '200px',
-                height: '200px',
-                overflow: 'hidden'
-              }}
               className="pulsate w-[200px] h-[200px] md:w-[300px] md:h-[300px] overflow-hidden"
             >
               <img
