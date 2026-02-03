@@ -73,14 +73,14 @@ export default function Hero() {
         </p>
         <div className="flex flex-col md:flex-row gap-6 justify-center">
           <a
-            href="#contact"
+            href="https://cal.com/joshua-howard-9ukwxv/30min"
             className="hero-button px-8 py-4 text-2xl font-medium transition-colors inline-flex items-center justify-center"
             style={{ backgroundColor: 'var(--almost-black)', color: '#ffffff', boxShadow: '0 4px 6px rgba(0, 0, 0, 0.5)' }}
           >
             Schedule a <span style={{ color: '#6ceeac' }}>&nbsp;Call</span>
           </a>
           <a
-            href="mailto:contact@fullstackhoward.com"
+            href="mailto:josh@fullstackhoward.com"
             className="hero-button px-8 py-4 text-2xl font-medium border-[6px] transition-colors inline-flex items-center justify-center gap-3"
             style={{ borderColor: 'var(--almost-black)', color: 'var(--almost-black)', backgroundColor: 'transparent', boxShadow: '0 4px 6px rgba(0, 0, 0, 0.5)' }}
           >

@@ -11,7 +11,7 @@ const Portfolio: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 px-6" style={{ backgroundColor: '#ebebeb' }}>
+    <section id="portfolio" className="py-20 px-6" style={{ backgroundColor: '#ebebeb' }}>
       <div className="max-w-7xl mx-auto">
         {/* Divider Bar */}
         <div className="flex justify-center mb-8">

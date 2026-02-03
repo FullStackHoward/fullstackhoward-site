@@ -11,6 +11,16 @@ export default function Navigation() {
     { label: 'Contact', href: '#contact' },
   ]
 
+  const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault()
+    const targetId = href.replace('#', '')
+    const element = document.getElementById(targetId)
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+    setIsMenuOpen(false)
+  }
+
   return (
     <nav className="lg:relative fixed top-0 left-0 right-0 bg-white z-50 pb-4 lg:pb-0">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -29,6 +39,7 @@ export default function Navigation() {
               <a
                 key={item.href}
                 href={item.href}
+                onClick={(e) => handleSmoothScroll(e, item.href)}
                 className="hover:text-blue-600 transition-colors text-[20px]"
                 style={{ color: '#2c2c2c' }}
               >
@@ -71,9 +82,9 @@ export default function Navigation() {
               <a
                 key={item.href}
                 href={item.href}
+                onClick={(e) => handleSmoothScroll(e, item.href)}
                 className="block py-2 hover:text-blue-600 transition-colors text-[20px]"
                 style={{ color: '#2c2c2c' }}
-                onClick={() => setIsMenuOpen(false)}
               >
                 {item.label}
               </a>

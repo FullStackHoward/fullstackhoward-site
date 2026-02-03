@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 const Development: React.FC = () => {
   return (
-    <section className="bg-[#CDCDCD] py-20 px-6 relative overflow-hidden">
+    <section id="development" className="bg-[#CDCDCD] py-20 px-6 relative overflow-hidden">
       {/* Big Sphere - bottom left */}
       <div className="absolute bottom-0 left-0 w-[600px] h-[600px] -translate-x-1/4 translate-y-1/4">
         <Image

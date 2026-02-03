@@ -4,7 +4,6 @@ export default function Contact() {
   const [formState, setFormState] = useState({ 
     name: '', 
     email: '', 
-    phone: '', 
     budget: '', 
     message: '' 
   })
@@ -14,11 +13,8 @@ export default function Contact() {
     e.preventDefault()
     setStatus('sending')
 
-    const formId = process.env.NEXT_PUBLIC_FORMSPREE_FORM_ID || '<YOUR_FORM_ID>'
-    const url = `https://formspree.io/f/${formId}`
-
     try {
-      const res = await fetch(url, {
+      const res = await fetch('https://formspree.io/f/mpqlboaw', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ ...formState }),
@@ -26,7 +22,7 @@ export default function Contact() {
 
       if (res.ok) {
         setStatus('success')
-        setFormState({ name: '', email: '', phone: '', budget: '', message: '' })
+        setFormState({ name: '', email: '', budget: '', message: '' })
       } else {
         setStatus('error')
       }
@@ -52,7 +48,6 @@ export default function Contact() {
               Email Me
             </h2>
             <form onSubmit={handleSubmit} className="space-y-6">
-              {/* Name and Phone Number Side by Side */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <label className="block">
                   <span className="block text-sm font-medium text-gray-700 mb-2">Full Name</span>
@@ -65,26 +60,16 @@ export default function Contact() {
                 </label>
 
                 <label className="block">
-                  <span className="block text-sm font-medium text-gray-700 mb-2">Phone Number</span>
+                  <span className="block text-sm font-medium text-gray-700 mb-2">Email</span>
                   <input
-                    type="tel"
-                    value={formState.phone}
-                    onChange={(e) => setFormState({ ...formState, phone: e.target.value })}
+                    type="email"
+                    value={formState.email}
+                    onChange={(e) => setFormState({ ...formState, email: e.target.value })}
+                    required
                     className="block w-full border border-gray-300 rounded px-4 py-3 focus:outline-none focus:border-gray-500 bg-white"
                   />
                 </label>
               </div>
-
-              <label className="block">
-                <span className="block text-sm font-medium text-gray-700 mb-2">Email</span>
-                <input
-                  type="email"
-                  value={formState.email}
-                  onChange={(e) => setFormState({ ...formState, email: e.target.value })}
-                  required
-                  className="block w-full border border-gray-300 rounded px-4 py-3 focus:outline-none focus:border-gray-500 bg-white"
-                />
-              </label>
 
               <label className="block">
                 <span className="block text-sm font-medium text-gray-700 mb-2">Budget</span>
@@ -109,6 +94,7 @@ export default function Contact() {
                   value={formState.message}
                   onChange={(e) => setFormState({ ...formState, message: e.target.value })}
                   rows={6}
+                  required
                   className="block w-full border border-gray-300 rounded px-4 py-3 focus:outline-none focus:border-gray-500 bg-white"
                 />
               </label>
@@ -129,7 +115,7 @@ export default function Contact() {
           {/* Right Column - Help Text */}
           <div>
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-8 text-center md:text-left">
-              Help <span className="underline decoration-[#2c2c2c] decoration-2 underline-offset-[5px]">Me</span> Help <span className="underline decoration-[#4AD600] decoration-2 underline-offset-[5px]">You</span>
+              Help <span className="underline decoration-[#2c2c2c] decoration-[6px] underline-offset-[5px]">Me</span> Help <span className="underline decoration-[#4AD600] decoration-[6px] underline-offset-[5px]">You</span>
             </h2>
             <ul className="space-y-4 text-lg text-gray-700">
               <li>• What problem are you trying to solve? <span className="text-gray-600">(Be specific!)</span></li>

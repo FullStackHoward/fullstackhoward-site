@@ -4,6 +4,7 @@ import Image from 'next/image';
 const Creative: React.FC = () => {
   return (
     <section 
+      id="creative"
       className="relative py-20 md:py-40 px-6 overflow-hidden min-h-150 pb-48 md:pb-96"
       style={{
         background: 'linear-gradient(120deg, #6DF2B4 0%, #4AD600 50%, #07734B 100%)'
