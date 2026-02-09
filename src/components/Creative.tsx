@@ -49,7 +49,7 @@ const Creative: React.FC = () => {
       </div>
 
       {/* Centered Content */}
-      <div className="max-w-4xl mx-auto text-center relative z-10 md:mt-[-60px]">
+      <div className="max-w-4xl mx-auto text-center relative z-10 md:mt-[-60px] pb-16 md:pb-32 lg:pb-48 xl:pb-64">
         <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
           Creative
         </h2>
