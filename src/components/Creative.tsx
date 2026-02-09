@@ -53,7 +53,7 @@ const Creative: React.FC = () => {
         <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
           Creative
         </h2>
-        <p className="text-lg lg:text-xl text-white leading-relaxed mb-8">
+        <p className="text-lg lg:text-xl text-white leading-relaxed mb-8 md:mb-16">
           My passion for design started during the MySpace era. I was that kid 
           building custom profile layouts, learning early that great design isn't just 
           about looking good, it's about making an impression. Since then, I've 
