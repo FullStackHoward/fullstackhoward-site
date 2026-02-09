@@ -66,7 +66,7 @@ const Creative: React.FC = () => {
           href="https://mrhoward.net" 
           target="_blank" 
           rel="noopener noreferrer"
-          className="inline-block bg-[#2D2D2D] text-white px-10 py-4 hover:bg-[#3D3D3D] transition-colors duration-300 text-xl font-medium shadow-[0_4px_6px_rgba(0,0,0,0.5)]"
+          className="inline-block bg-[#2D2D2D] text-white px-10 py-4 hover:bg-[#3D3D3D] transition-colors duration-300 text-xl font-medium shadow-[0_4px_6px_rgba(0,0,0,0.5)] md:mb-16"
         >
           <span className="text-white">Visit my </span>
           <span className="text-[#4AD600]">Creative Portfolio</span>
