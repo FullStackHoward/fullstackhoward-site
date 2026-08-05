@@ -1,13 +1,19 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 
-const Portfolio: React.FC = () => {
-  const [expandedImage, setExpandedImage] = useState<string | null>(null);
+type PortfolioImage = {
+  src: string;
+  alt: string;
+  link: string;
+};
 
-  const portfolioImages = [
-    { src: '/img/p1.jpg', alt: 'Portfolio project 1' },
-    { src: '/img/p2.jpg', alt: 'Portfolio project 2' },
-    { src: '/img/p3.jpg', alt: 'Portfolio project 3' },
+const Portfolio: React.FC = () => {
+  const [expandedImage, setExpandedImage] = useState<PortfolioImage | null>(null);
+
+  const portfolioImages: PortfolioImage[] = [
+    { src: '/img/p1.jpg', alt: 'Portfolio project 1', link: 'https://www.vicegamers.com' },
+    { src: '/img/p2.jpg', alt: 'Portfolio project 2', link: 'https://www.pottshomerestoration.com' },
+    { src: '/img/p3.jpg', alt: 'Portfolio project 3', link: 'https://performstrongpt.com' },
   ];
 
   return (
@@ -35,7 +41,7 @@ const Portfolio: React.FC = () => {
             <div 
               key={index}
               className="bg-white shadow-lg overflow-hidden cursor-pointer hover:shadow-xl transition-shadow duration-300"
-              onClick={() => setExpandedImage(image.src)}
+              onClick={() => setExpandedImage(image)}
             >
               <Image
                 src={image.src}
@@ -55,7 +61,7 @@ const Portfolio: React.FC = () => {
           className="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4"
           onClick={() => setExpandedImage(null)}
         >
-          <div className="relative max-w-7xl max-h-[90vh]">
+          <div className="relative max-w-7xl max-h-[90vh] flex flex-col items-center">
             {/* Close Button */}
             <button
               onClick={() => setExpandedImage(null)}
@@ -65,12 +71,26 @@ const Portfolio: React.FC = () => {
               ×
             </button>
             <Image
-              src={expandedImage}
-              alt="Expanded portfolio image"
+              src={expandedImage.src}
+              alt={expandedImage.alt}
               width={1920}
               height={1080}
-              className="max-w-full max-h-[90vh] object-contain"
+              className="max-w-full max-h-[75vh] object-contain"
             />
+            {/* Visit Site Link */}
+            <a
+              href={expandedImage.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
+              className="mt-6 inline-block bg-[#2D2D2D] text-white px-8 py-3 hover:bg-[#3D3D3D] transition-colors duration-300 text-lg font-medium shadow-[0_4px_6px_rgba(0,0,0,0.5)]"
+            >
+              <span className="text-white">Visit </span>
+              <span className="text-[#4AD600]">
+                {expandedImage.link.replace(/^https?:\/\/(www\.)?/, '')}
+              </span>
+              <span className="text-[#4AD600] ml-2">→</span>
+            </a>
           </div>
         </div>
       )}
