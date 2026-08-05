@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
-import Image from 'next/image';
+import Image, { type StaticImageData } from 'next/image';
+import p1 from '../../public/img/p1.jpg';
+import p2 from '../../public/img/p2.jpg';
+import p3 from '../../public/img/p3.jpg';
 
 type PortfolioImage = {
-  src: string;
+  src: StaticImageData;
   alt: string;
   link: string;
 };
@@ -11,9 +14,9 @@ const Portfolio: React.FC = () => {
   const [expandedImage, setExpandedImage] = useState<PortfolioImage | null>(null);
 
   const portfolioImages: PortfolioImage[] = [
-    { src: '/img/p1.jpg?v=2', alt: 'Portfolio project 1', link: 'https://www.vicegamers.com' },
-    { src: '/img/p2.jpg', alt: 'Portfolio project 2', link: 'https://www.pottshomerestoration.com' },
-    { src: '/img/p3.jpg?v=2', alt: 'Portfolio project 3', link: 'https://performstrongpt.com' },
+    { src: p1, alt: 'Portfolio project 1', link: 'https://www.vicegamers.com' },
+    { src: p2, alt: 'Portfolio project 2', link: 'https://www.pottshomerestoration.com' },
+    { src: p3, alt: 'Portfolio project 3', link: 'https://performstrongpt.com' },
   ];
 
   return (
