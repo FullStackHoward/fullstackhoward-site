@@ -11,9 +11,9 @@ const Portfolio: React.FC = () => {
   const [expandedImage, setExpandedImage] = useState<PortfolioImage | null>(null);
 
   const portfolioImages: PortfolioImage[] = [
-    { src: '/img/p1.jpg', alt: 'Portfolio project 1', link: 'https://www.vicegamers.com' },
+    { src: '/img/p1.jpg?v=2', alt: 'Portfolio project 1', link: 'https://www.vicegamers.com' },
     { src: '/img/p2.jpg', alt: 'Portfolio project 2', link: 'https://www.pottshomerestoration.com' },
-    { src: '/img/p3.jpg', alt: 'Portfolio project 3', link: 'https://performstrongpt.com' },
+    { src: '/img/p3.jpg?v=2', alt: 'Portfolio project 3', link: 'https://performstrongpt.com' },
   ];
 
   return (
